@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neel Weds Anju!</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url('photo_asset_1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Open Sans', sans-serif;
+      color: #ffffff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.55);
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      max-width: 600px;
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    .initials {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.5rem;
+      color: #ffdce1;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ffeef2;
+    }
+
+    .emoji {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .initials {
+        font-size: 2.8rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="initials">Neel & Anju</div>
+    <span class="emoji">💍</span>
+    <h1>We're Getting Married!</h1>
+    <p>
+      Our special day is coming soon.<br />
+      Stay tuned for the full story, the date, and all the love. 💖
+    </p>
+    <span class="emoji">🎉</span>
+  </div>
+</body>
+</html>
