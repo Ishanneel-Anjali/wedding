@@ -1,100 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ishan Weds Anjali!</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anjali weds Ishanneel 💍</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-    body {
-      background: url('photo_asset_1.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: 'Open Sans', sans-serif;
-      color: #ffffff;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-    }
+  <body>
+    <!-- HERO -->
+    <header class="hero" id="top">
+      <div class="hero-overlay">
+        <nav class="nav">
+          <div class="nav-title">Anjali ♥ Ishanneel</div>
+          <div class="nav-links">
+            <a href="#story">Story</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#venue">Venue</a>
+            <a href="#rsvp">RSVP</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
 
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.55);
-      padding: 3rem 2rem;
-      border-radius: 16px;
-      max-width: 600px;
-      animation: fadeIn 1.2s ease-out;
-    }
+        <main class="hero-card">
+          <div class="initials">Anjali weds Ishanneel</div>
+          <div class="emoji">💍</div>
 
-    .initials {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.5rem;
-      color: #ffdce1;
-      margin-bottom: 0.5rem;
-    }
+          <h1>We're Getting Married!</h1>
+          <p class="subtitle">
+            Our special day is coming soon.<br />
+            Stay tuned for the full story, more details, and all the love that comes with it. 💖
+          </p>
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
+          <div class="notice">
+            ✨ This website is being updated. More details coming soon!
+          </div>
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #ffeef2;
-    }
+          <!-- Countdown -->
+          <section class="countdown" aria-label="Countdown timer">
+            <div class="countdown-title">Countdown to the Big Day</div>
 
-    .emoji {
-      font-size: 2rem;
-      margin: 1rem 0;
-    }
+            <div class="countdown-grid">
+              <div class="count-box">
+                <div class="count-num" id="days">--</div>
+                <div class="count-label">Days</div>
+              </div>
+              <div class="count-box">
+                <div class="count-num" id="hours">--</div>
+                <div class="count-label">Hours</div>
+              </div>
+              <div class="count-box">
+                <div class="count-num" id="minutes">--</div>
+                <div class="count-label">Minutes</div>
+              </div>
+              <div class="count-box">
+                <div class="count-num" id="seconds">--</div>
+                <div class="count-label">Seconds</div>
+              </div>
+            </div>
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+            <div class="countdown-date" id="weddingDateLabel"></div>
+          </section>
 
-    @media (max-width: 480px) {
-      .initials {
-        font-size: 2.8rem;
-      }
-      h1 {
-        font-size: 1.6rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-    }
-  </style>
-</head>
-<body>
-  <div class="overlay">
-    <div class="initials">Ishan & Anjali</div>
-    <span class="emoji">💍</span>
-    <h1>We're Getting Married!</h1>
-    <p>
-      Our special day is coming soon.<br />
-      Stay tuned for the full story, the date, and all the love. 💖
-    </p>
-    <span class="emoji">🎉</span>
-  </div>
-</body>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#venue">📍 Venue</a>
+            <a class="btn btn-ghost" href="#rsvp">📝 RSVP</a>
+          </div>
+        </main>
+      </div>
+    </header>
+
+    <!-- OUR STORY -->
+	<section class="section" id="story">
+	  <div class="container">
+		<h2>Our Story</h2>
+		<p class="section-subtitle">A few moments that brought us here ✨</p>
+
+		<!-- Existing story cards -->
+		<div class="cards">
+		  <div class="card">
+			<h3>💫 How we met</h3>
+			<p>
+			  In August 2018 at NIT Trichy, during Anjali’s orientation, we crossed paths for the first time. It was fleeting, but mutual. A few quiet glances and a small spark of curiosity were all it took to begin a story we would later choose to write together.
+			</p>
+		  </div>
+
+		  <div class="card">
+			<!-- <h3>💍 The proposal</h3> -->
+			<h3>☕ The First Date</h3>
+			<p>
+			  Months of conversations, laughter, and a connection that only grew stronger followed. In January 2019, Ishan asked Anjali out on our first date, and she said yes without a second thought. Seven years later, it still feels like one of the easiest and most beautiful decisions we have ever made.
+			</p>
+		  </div>
+
+		  <div class="card">
+			<h3>❤️ Forever begins</h3>
+			<p>
+			  Now, as we step into our next chapter, we look forward to a life of love, laughter, growth, and countless little moments that make a forever. We can’t wait to celebrate this beginning with you. <br /> We humbly invite you to join us and bless us as we begin our forever.
+			</p>
+		  </div>
+		</div>
+
+		<!-- Timeline
+		<div class="timeline-wrap">
+		  <h3 class="timeline-title">Moments</h3>
+
+		  <div class="timeline">
+			  <div class="timeline-item">
+				<div class="timeline-dot"></div>
+
+				<details class="timeline-card" open>
+				  <summary class="timeline-summary">
+					<span class="timeline-date-pill">August 2018</span>
+					<span class="timeline-toggle" aria-hidden="true"></span>
+				  </summary>
+
+				  <p class="timeline-text">
+					We met at NIT Trichy during Anjali’s first orientation session. A quiet
+					glance, a sweet first impression, and a moment we thought would pass.
+				  </p>
+				</details>
+			  </div>
+
+			  <div class="timeline-item">
+				<div class="timeline-dot"></div>
+
+				<details class="timeline-card">
+				  <summary class="timeline-summary">
+					<span class="timeline-date-pill">Fest Season 2018</span>
+					<span class="timeline-toggle" aria-hidden="true"></span>
+				  </summary>
+
+				  <p class="timeline-text">
+					Fate brought us together again while organising events for an
+					intercollegiate fest. Teamwork turned into friendship, and friendship
+					began to feel like home.
+				  </p>
+				</details>
+			  </div>
+
+			  <div class="timeline-item">
+				<div class="timeline-dot"></div>
+
+				<details class="timeline-card">
+				  <summary class="timeline-summary">
+					<span class="timeline-date-pill">November 2018</span>
+					<span class="timeline-toggle" aria-hidden="true"></span>
+				  </summary>
+
+				  <p class="timeline-text">
+					Freshers’ Day became a turning point. From choosing a senior boy for the
+					ramp walk to talking every day after, we grew closer without even trying.
+				  </p>
+				</details>
+			  </div>
+
+			  <div class="timeline-item">
+				<div class="timeline-dot"></div>
+
+				<details class="timeline-card">
+				  <summary class="timeline-summary">
+					<span class="timeline-date-pill">January 2019</span>
+					<span class="timeline-toggle" aria-hidden="true"></span>
+				  </summary>
+
+				  <p class="timeline-text">
+					Our first date. A simple question, an easy “yes”, and the beginning of us.
+				  </p>
+				</details>
+			  </div>
+
+			  <div class="timeline-item">
+				<div class="timeline-dot"></div>
+
+				<details class="timeline-card">
+				  <summary class="timeline-summary">
+					<span class="timeline-date-pill">2020–2021 (Covid + Long Distance)</span>
+					<span class="timeline-toggle" aria-hidden="true"></span>
+				  </summary>
+
+				  <p class="timeline-text">
+					Distance tested us, but it also strengthened us. We learned patience,
+					trust, and how love shows up, even from miles away.
+				  </p>
+				</details>
+			  </div>
+
+			  <div class="timeline-item">
+				<div class="timeline-dot"></div>
+
+				<details class="timeline-card">
+				  <summary class="timeline-summary">
+					<span class="timeline-date-pill">Today</span>
+					<span class="timeline-toggle" aria-hidden="true"></span>
+				  </summary>
+
+				  <p class="timeline-text">
+					Seven years of love, laughter, growth, and unwavering support later, we
+					are ready for our next chapter, and so excited to celebrate it with you.
+				  </p>
+				</details>
+			  </div>
+			</div>
+
+		</div>
+
+	  </div>
+	</section>
+
+
+    <!-- GALLERY -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <h2>Gallery</h2>
+        <p class="section-subtitle">Some memories on repeat 📸</p>
+
+        <div class="slideshow">
+          <img
+            id="slideshowImage"
+            src="assets/photo1.jpg"
+            alt="Anjali and Ishanneel gallery"
+          />
+          <div class="slideshow-dots" id="dots"></div>
+        </div>
+
+        <p class="small-note">
+          More photos will be added soon. Keep checking back 😊
+        </p>
+      </div>
+    </section>
+
+    <!-- VENUE -->
+    <section class="section" id="venue">
+      <div class="container">
+        <h2>Venue</h2>
+        <p class="section-subtitle">
+          Green Nest, Kumbalangi - Kochi, Kerala 🌴
+        </p>
+
+        <div class="venue-grid">
+          <div class="card">
+            <h3>📍 Location</h3>
+            <p>
+              <strong>Green Nest</strong><br />
+              V7RH+G2 Green Nest, Kallanchery Rd, North Kumbalangi, Kumbalangi,
+              Kochi, Kerala 682007
+            </p>
+
+            <div class="venue-actions">
+              <a
+                class="btn btn-primary"
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.google.com/maps/dir//V7RH%2BG2+GREEN+NEST+KUMBALANGI,+Green+Nest,+Kallanchery+Rd,+North+Kumbalangi,+Kumbalangi,+Kochi,+Kerala+682007/@9.8913413,76.2775258,17z/data=!4m17!1m7!3m6!1s0x3b08720404cac507:0x550406572ac75779!2sGREEN+NEST+KUMBALANGI!8m2!3d9.8913413!4d76.2775258!16s%2Fg%2F11c75pgnxs!4m8!1m0!1m5!1m1!1s0x3b08720404cac507:0x550406572ac75779!2m2!1d76.2775258!2d9.8913413!3e9?entry=ttu&g_ep=EgoyMDI2MDExMy4wIKXMDSoASAFQAw%3D%3D"
+              >
+                🧭 Directions
+              </a>
+
+              <a class="btn btn-ghost" href="#rsvp">📝 RSVP</a>
+            </div>
+          </div>
+
+          <div class="map">
+            <iframe
+              title="Google Maps - Venue"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62879.48042211583!2d76.25418817008723!3d9.936659942743386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08720404cac507%3A0x550406572ac75779!2sGREEN%20NEST%20KUMBALANGI!5e0!3m2!1sen!2sin!4v1768946656564!5m2!1sen!2sin"
+              allowfullscreen=""
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP -->
+    <section class="section" id="rsvp">
+      <div class="container">
+        <h2>RSVP</h2>
+        <p class="section-subtitle">
+          Please confirm so we can plan everything perfectly 💌
+        </p>
+
+        <form class="rsvp-form" id="rsvpForm">
+          <div class="form-row">
+            <div class="field">
+              <label>Full name *</label>
+              <input required name="name" placeholder="Your Name" />
+            </div>
+            <div class="field">
+              <label>Phone *</label>
+              <input
+				required
+				name="phone"
+				placeholder="+91..."
+				inputmode="tel"
+				pattern="^\+?[0-9]{10,13}$"
+				title="Please enter a valid phone number"
+			  />
+
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label>Attending?</label>
+              <select name="attending">
+                <option value="Yes, I'll be there">Yes, I'll be there</option>
+                <option value="Sorry, can't make it">Sorry, can't make it</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Guests</label>
+              <select name="guests">
+				<option>1</option>
+				<option selected>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+				<option>6</option>
+			   </select>
+            </div>
+
+            <div class="field">
+              <label>Notes</label>
+              <input name="notes" placeholder="Veg, allergies etc. (optional)" />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-primary" type="submit">✅ Submit RSVP</button>
+            <a
+              class="btn btn-ghost"
+              id="whatsappRsvp"
+              target="_blank"
+              rel="noreferrer"
+            >
+              💬 RSVP on WhatsApp
+            </a>
+          </div>
+
+          <div class="form-status" id="formStatus"></div>
+        </form>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="section-subtitle">
+          If you need help with travel/stay or anything else, please reach out 📞
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <h3>📱 WhatsApp</h3>
+			<p>
+			  For any help or queries:
+			</p>
+
+			<div class="contact-lines">
+			  <div class="contact-line">
+				<strong class="contact-name">Anjali:</strong>
+				<strong class="contact-num">+91 9995662870</strong>
+			  </div>
+			  <div class="contact-line">
+				<strong class="contact-name">Ishanneel:</strong>
+				<strong class="contact-num">+91 8903319492</strong>
+			  </div>
+			</div>
+
+
+
+            <div class="contact-actions">
+              <a
+                class="btn btn-primary"
+                target="_blank"
+                rel="noreferrer"
+                href="https://wa.me/919995662870"
+              >
+                Message Anjali
+              </a>
+
+              <a
+                class="btn btn-ghost"
+                target="_blank"
+                rel="noreferrer"
+                href="https://wa.me/918903319492"
+              >
+                Message Ishanneel
+              </a>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>📧 Email</h3>
+            <p>ishanneelanjali@gmail.com</p>
+          </div>
+
+          <div class="card">
+            <h3>✨ Reminder</h3>
+            <p>
+              This website will be updated with more details soon.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div>© <span id="year"></span> Anjali & Ishanneel. Made with ❤️</div>
+        <div class="footer-tag">#AnjaliWedsIshanneel</div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
-
