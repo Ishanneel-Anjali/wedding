@@ -67,12 +67,11 @@ updateCountdown();
 
 
 // Gallery
-const galleryImages = [
-  "assets/photo1.jpg",
-  "assets/photo2.jpg",
-  "assets/photo3.jpg",
-  "assets/photo4.jpg",
-];
+const MAX_IMAGES = 16;
+
+const galleryImages = Array.from({ length: MAX_IMAGES }, (_, i) => 
+  `assets/photo${i + 1}.jpg`
+);
 
 const slideshowImage = document.getElementById("slideshowImage");
 const dotsContainer = document.getElementById("dots");
@@ -81,13 +80,16 @@ let slideIndex = 0;
 
 function renderDots() {
   dotsContainer.innerHTML = "";
+  
   galleryImages.forEach((_, i) => {
     const dot = document.createElement("div");
     dot.className = "dot" + (i === slideIndex ? " active" : "");
     dot.addEventListener("click", () => {
       slideIndex = i;
       updateSlide();
+	  resetSlideshowTimer();
     });
+	
     dotsContainer.appendChild(dot);
   });
 }
@@ -106,20 +108,134 @@ timelineCards.forEach((card) => {
 });
 
 
+const cropOverrides = {
+  "photo2.jpg":  { position: "50% 15%" },
+  "photo3.jpg":  { position: "50% 10%" },
+  "photo4.jpg":  { position: "50% 70%" },
+  "photo5.jpg":  { position: "50% 40%" },
+  "photo6.jpg":  { position: "50% 70%" },
+  "photo7.jpg":  { position: "50% 80%" },
+  "photo8.jpg":  { position: "60% 55%" },
+  "photo9.jpg":  { position: "50% 55%" },
+  "photo10.jpg": { position: "50% 70%" },
+  "photo11.jpg": { position: "50% 10%" },
+  "photo12.jpg": { position: "50% 70%" },
+  "photo13.jpg": { position: "50% 32%" },
+  "photo14.jpg": { position: "50% 58%" },
+  "photo15.jpg": { position: "50% 75%" },
+  "photo16.jpg": { position: "10% 75%" }
+};
+
+const cropCache = {};
+
+function resolveCropFor(src) {
+  const filename = src.split("/").pop();
+
+  if (cropCache[filename]) {
+    return cropCache[filename];
+  }
+
+  const override = cropOverrides[filename] || {};
+
+  cropCache[filename] = {
+    fit: override.fit || "cover",
+    position: override.position || "50% 50%",
+    zoom: override.zoom || 1
+  };
+
+  return cropCache[filename];
+}
+
+function applyCrop(img, crop) {
+  img.style.objectFit = crop.fit;
+  img.style.objectPosition = crop.position;
+  img.style.transform = crop.zoom !== 1
+    ? `scale(${crop.zoom})`
+    : "none";
+}
+
+
+function resetSlideshowTimer() {
+  if (slideshowTimer) {
+    clearInterval(slideshowTimer);
+  }
+  slideshowTimer = setInterval(nextSlide, 3500);
+}
+
+function nextSlide() {
+  slideIndex = (slideIndex + 1) % galleryImages.length;
+  updateSlide();
+  resetSlideshowTimer();
+}
+
+function prevSlide() {
+  slideIndex =
+    (slideIndex - 1 + galleryImages.length) % galleryImages.length;
+  updateSlide();
+  resetSlideshowTimer();
+}
+
+
+let slideshowTimer = setInterval(nextSlide, 3500);
+
+
+// Desktop Congtrols
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") {
+    nextSlide();
+  } else if (e.key === "ArrowLeft") {
+    prevSlide();
+  }
+});
+
+
+// Mobile Controls
+let touchStartX = 0;
+let touchEndX = 0;
+
+const SWIPE_THRESHOLD = 40; // px (safe & intentional)
+
+slideshowImage.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+slideshowImage.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = touchStartX - touchEndX;
+
+  if (Math.abs(diff) < SWIPE_THRESHOLD) return;
+
+  if (diff > 0) {
+    // swipe left
+    nextSlide();
+  } else {
+    // swipe right
+    prevSlide();
+  }
+}
+
+slideshowImage.onload = () => {
+  const src = slideshowImage.src;
+  const crop = resolveCropFor(src);
+  applyCrop(slideshowImage, crop);
+  slideshowImage.style.opacity = "1";
+};
+
 function updateSlide() {
+  slideshowImage.style.opacity = "0";
   slideshowImage.src = galleryImages[slideIndex];
   renderDots();
 }
 
+
+
 slideshowImage.onerror = () => {
   slideshowImage.src = "assets/hero.jpg";
 };
-
-
-setInterval(() => {
-  slideIndex = (slideIndex + 1) % galleryImages.length;
-  updateSlide();
-}, 3500);
 
 updateSlide();
 
