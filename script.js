@@ -1,5 +1,5 @@
 // Event Date
-const WEDDING_DATE = new Date("2026-02-21T16:00:00+05:30");
+const WEDDING_DATE = new Date("2026-02-21T16:30:00+05:30");
 
 // WhatsApp Numbers
 const WHATSAPP_ISHANNEEL = "918903319492";
